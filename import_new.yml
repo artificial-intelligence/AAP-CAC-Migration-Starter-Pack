@@ -40,11 +40,6 @@
       ansible.builtin.include_vars:
         dir: "{{ output_path }}"
 
-    - set_fact:
-        controller_username: "admin" # MUST BE ADMIN USER
-        controller_password: "oXjEGhd85maDLPfYFwV2Kz0IjhzZGXXw"
-        controller_hostname: "phoneix-aap-26.apps.gw7qzvku.eastus.aroapp.io" # DO NOT INCLUDE http:// or https://
-
   roles:
     - {role: infra.controller_configuration.credential_types, when: controller_credential_types is defined}
     # - {role: infra.controller_configuration.settings, when: controller_settings is defined}
