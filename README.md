@@ -54,6 +54,7 @@ output_path: "./exports/{{ export_organization }}"
 flatten_output: true
 aap_validate_certs: "false"
 controller_validate_certs: "false"
+disable_schedules: false
 
 # DEBUG
 controller_configuration_credentials_secure_logging: "false"
@@ -111,6 +112,10 @@ No.
 
 **Why aren’t passwords exported?**  
 Secret values are encrypted at rest and not emitted by CaC.
+
+**I want to export/import schedules, but disable them**
+
+Set `disable_schedules: true` in vars.yml
 
 ---
 
