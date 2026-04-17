@@ -48,6 +48,13 @@
         status_code: 204
       when: aap_oauthtoken_url is defined
 
+    - name: Disable schedules if boolean disable_schedules is set
+      ansible.builtin.replace:
+        path: "{{ output_path }}/schedules.yaml"
+        regexp: 'enabled: true'
+        replace: 'enabled: false'
+      when: disable_schedules
+
     - name: Read hosts.yaml file into variable
       ansible.builtin.slurp:
         src: "{{ output_path }}/hosts.yaml"
