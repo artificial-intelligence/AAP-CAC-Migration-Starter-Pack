@@ -1,0 +1,6 @@
+---
+- name: Disable schedules
+  ansible.builtin.replace:
+    path: "{{ output_path }}/schedules.yaml"
+    regexp: 'enabled: true'
+    replace: 'enabled: false'
